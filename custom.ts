@@ -11,6 +11,7 @@ let igniterStatusLP = false
 let armStatus = false
 let armStatusLP = false
 let klar = false
+
 /**
  * Custom blocks
  */
@@ -36,8 +37,8 @@ namespace RocketLink {
     }
     //% block="Kjør sjekk av igniterStatus"
     //% group="Status"
-    export function Ignitersjekk() {
-        strip.showColor(neopixel.colors(NeoPixelColors.Red))
+    export function ignitersjekk() {
+        let igniterStatus = false
         pins.digitalWritePin(DigitalPin.P14, 1)
         basic.pause(200)
         if (pins.digitalReadPin(DigitalPin.P2) == 1) {
@@ -87,6 +88,22 @@ namespace RocketLink {
             return true
         } else {
             return false
+        }
+    }
+
+    //% block="Sjekk linkStatus til ControllerPAD: | Send radionummer $linkRadioNumber"
+    //% inlineInputMode=external
+    //% group="Status"
+    export function linksjekk(linkRadioNumber: number) {
+        let sistSettAktiv = 0
+        while (true) {
+            radio.sendNumber(linkRadioNumber)
+            if (input.runningTime() - sistSettAktiv > 3 * 200) {
+                linkStatus = false
+                igniterStatusLP = false
+                armStatusLP = false
+            }
+            basic.pause(200)
         }
     }
 }
