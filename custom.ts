@@ -52,6 +52,7 @@ namespace RocketLink {
     }
 
     //% block="Trykker på Statussjekk-knappen"
+    //% subcategory=Knapper
     //% group="Knapper - Felles"
     export function statusSjekk(): boolean {
         if (pins.digitalReadPin(DigitalPin.P5) == 0) {
@@ -62,6 +63,7 @@ namespace RocketLink {
     }
 
     //% block="Trykker på Launch-knappen"
+    //% subcategory=Knapper
     //% group="Knapper - ControllerPAD"
     export function launch(): boolean {
         if (pins.digitalReadPin(DigitalPin.P11) == 0) {
@@ -72,6 +74,7 @@ namespace RocketLink {
     }
 
     //% block="Armerer ControllerPAD"
+    //% subcategory=Knapper
     //% group="Knapper - ControllerPAD"
     export function armCP(): boolean {
         if (pins.digitalReadPin(DigitalPin.P1) == 0) {
@@ -93,7 +96,7 @@ namespace RocketLink {
 
     //% block="Sjekk linkStatus til ControllerPAD: | Send radionummer $linkRadioNumber"
     //% inlineInputMode=external
-    //% group="Status"
+    //% group="Status - Radio"
     //% color=#e5478c
     export function linksjekk(linkRadioNumber: number) {
         let sistSettAktiv = 0
