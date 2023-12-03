@@ -55,6 +55,8 @@ namespace RocketLink {
                 linkStatus = false
                 basic.showNumber(10)
             }
+        } else {
+            return
         }
     }
 
