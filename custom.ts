@@ -1,12 +1,5 @@
  
-let strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
-let selfStatus = false
-let linkStatus = false
-let igniterStatus = false
-let igniterStatusLP = false
-let armStatus = false
-let armStatusLP = false
-let klar = false
+
 
 /**
  * RocketLink-M blokker
@@ -16,6 +9,15 @@ let klar = false
 //% groups="['Status', 'Knapper - ControllerPAD', 'Knapper - LaunchPAD', 'Knapper - Felles']"
 
 namespace RocketLink {
+
+    let strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
+    let selfStatus = false
+    let linkStatus = false
+    let igniterStatus = false
+    let igniterStatusLP = false
+    let armStatus = false
+    let armStatusLP = false
+    let klar = false
 
     //% block="Sett status på $velgVariabel til $status"
     //% velgVariabel.defl=selfStatus
