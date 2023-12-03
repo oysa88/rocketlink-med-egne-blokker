@@ -39,7 +39,7 @@ namespace RocketLink {
     //% subcategory=Status
     //% group="Status"
     export function statusoppdatering(velgVariabel?: status, statusBool?: boolean): void {
-        if (status.selfStatus) {
+        if (velgVariabel == status.selfStatus) {
             if (statusBool) {
                 selfStatus = true
                 basic.showNumber(1) 
@@ -47,7 +47,7 @@ namespace RocketLink {
                 selfStatus = false
                 basic.showNumber(0)
             }
-        } else if (status.linkStatus) {
+        } else if (velgVariabel == status.linkStatus) {
             if (statusBool) {
                 linkStatus = true
                 basic.showNumber(11)
