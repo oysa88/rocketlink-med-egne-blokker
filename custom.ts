@@ -94,6 +94,7 @@ namespace RocketLink {
     //% block="Sjekk linkStatus til ControllerPAD: | Send radionummer $linkRadioNumber"
     //% inlineInputMode=external
     //% group="Status"
+    //% color=#e5478c
     export function linksjekk(linkRadioNumber: number) {
         let sistSettAktiv = 0
         while (true) {
