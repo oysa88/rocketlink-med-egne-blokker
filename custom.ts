@@ -16,7 +16,7 @@ let klar = false
  * Custom blocks
  */
 //% weight=100 color=#ff0000 icon="\uf135"
-//% groups="['Status', 'Knapper']"
+//% groups="['Status', 'Knapper - ControllerPAD', 'Knapper - LaunchPAD', 'Knapper - Felles']"
 namespace RocketLink {
 
     //% block="Sett status på $velgVariabel til $status"
@@ -52,7 +52,7 @@ namespace RocketLink {
     }
 
     //% block="Trykker på Statussjekk-knappen"
-    //% group="Knapper"
+    //% group="Knapper - Felles"
     export function statusSjekk(): boolean {
         if (pins.digitalReadPin(DigitalPin.P5) == 0) {
             return true
@@ -62,7 +62,7 @@ namespace RocketLink {
     }
 
     //% block="Trykker på Launch-knappen"
-    //% group="Knapper"
+    //% group="Knapper - ControllerPAD"
     export function launch(): boolean {
         if (pins.digitalReadPin(DigitalPin.P11) == 0) {
             return true
@@ -72,7 +72,7 @@ namespace RocketLink {
     }
 
     //% block="Armerer ControllerPAD"
-    //% group="Knapper"
+    //% group="Knapper - ControllerPAD"
     export function armCP(): boolean {
         if (pins.digitalReadPin(DigitalPin.P1) == 0) {
             return true
@@ -82,7 +82,7 @@ namespace RocketLink {
     }
 
     //% block="Armerer LaunchPAD"
-    //% group="Knapper"
+    //% group="Knapper - LaunchPAD"
     export function armLP(): boolean {
         if (pins.digitalReadPin(DigitalPin.P1) == 1) {
             return true
