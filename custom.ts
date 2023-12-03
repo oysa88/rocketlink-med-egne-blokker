@@ -1,4 +1,20 @@
- 
+enum status
+{
+    //% block="selfStatus"
+    selfStatus,
+    //% block="linkStatus"
+    linkStatus,
+    //% block="igniterStatus"
+    igniterStatus,
+    //% block="igniterStatusLP"
+    igniterStatusLP,
+    //% block="armStatus"
+    armStatus,
+    //% block="armStatusLP"
+    armStatusLP,
+    //% block="klar"
+    klar
+}
 
 
 /**
@@ -10,30 +26,27 @@
 
 namespace RocketLink {
 
-    let strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
     let selfStatus = false
     let linkStatus = false
-    let igniterStatus = false
-    let igniterStatusLP = false
     let armStatus = false
     let armStatusLP = false
+    let igniterStatus = false
+    let igniterStatusLP = false
     let klar = false
 
-    //% block="Sett status på $velgVariabel til $status"
-    //% velgVariabel.defl=selfStatus
-    //% velgVariabel.shadow=variables_get
+    //% block="Sett $velgVariabel til $statusBool"
     //% subcategory=Status
     //% group="Status"
-    export function Statusoppdatering (velgVariabel?: boolean, status?: boolean): void {
-        if (selfStatus) {
-            selfStatus = false
+    export function Statusoppdatering(velgVariabel?: status, statusBool?: boolean): void {
+        if (status.selfStatus && statusBool == true) {
+            basic.showNumber(1)
         } else {
-            selfStatus = true
+            basic.showNumber(0)
         }
-        if (selfStatus) {
-            selfStatus = false
+        if (status.linkStatus && statusBool == true) {
+            basic.showNumber(11)
         } else {
-            selfStatus = true
+            basic.showNumber(10)
         }
     }
     //% block="Kjør sjekk av igniterStatus"
