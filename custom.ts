@@ -1,3 +1,8 @@
+/**
+ * RocketLink-M blokker
+ */
+
+
 enum status
 {
     //% block="selfStatus"
@@ -16,11 +21,6 @@ enum status
     klar
 }
 
-
-/**
- * RocketLink-M blokker
- */
-
 //% weight=80 color=#ff0000 icon="\uf135"
 //% groups="['Status', 'Knapper - ControllerPAD', 'Knapper - LaunchPAD', 'Knapper - Felles']"
 
@@ -33,27 +33,35 @@ namespace RocketLink {
     let igniterStatus = false
     let igniterStatusLP = false
     let klar = false
+    let sistSettAktiv = 0
 
     //% block="Sett $velgVariabel til $statusBool"
     //% subcategory=Status
     //% group="Status"
-    export function Statusoppdatering(velgVariabel?: status, statusBool?: boolean): void {
-        if (status.selfStatus && statusBool == true) {
-            basic.showNumber(1)
-        } else {
-            basic.showNumber(0)
-        }
-        if (status.linkStatus && statusBool == true) {
-            basic.showNumber(11)
-        } else {
-            basic.showNumber(10)
+    export function statusoppdatering(velgVariabel?: status, statusBool?: boolean): void {
+        if (status.selfStatus) {
+            if (statusBool) {
+                selfStatus = true
+                basic.showNumber(1) 
+            } else {
+                selfStatus = false
+                basic.showNumber(0)
+            }
+        } else if (status.linkStatus) {
+            if (statusBool) {
+                selfStatus = true
+                basic.showNumber(11)
+            } else {
+                selfStatus = false
+                basic.showNumber(10)
+            }
         }
     }
+
     //% block="Kjør sjekk av igniterStatus"
     //% subcategory=Status
     //% group="Status"
     export function ignitersjekk() {
-        let igniterStatus = false
         pins.digitalWritePin(DigitalPin.P14, 1)
         basic.pause(200)
         if (pins.digitalReadPin(DigitalPin.P2) == 1) {
@@ -116,7 +124,6 @@ namespace RocketLink {
     //% group="Status - Radio"
     //% color=#e5478c
     export function linksjekk(linkRadioNumber: number) {
-        let sistSettAktiv = 0
         while (true) {
             radio.sendNumber(linkRadioNumber)
             if (input.runningTime() - sistSettAktiv > 3 * 200) {
