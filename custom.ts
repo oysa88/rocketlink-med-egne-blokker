@@ -49,10 +49,10 @@ namespace RocketLink {
             }
         } else if (status.linkStatus) {
             if (statusBool) {
-                selfStatus = true
+                linkStatus = true
                 basic.showNumber(11)
             } else {
-                selfStatus = false
+                linkStatus = false
                 basic.showNumber(10)
             }
         }
