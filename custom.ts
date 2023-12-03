@@ -35,7 +35,7 @@ namespace RocketLink {
         }
     }
     //% block="Kjør sjekk av igniterStatus"
-    //% subcategory=Status color=#d400d4
+    //% subcategory=Status
     //% group="Status"
     export function ignitersjekk() {
         let igniterStatus = false
