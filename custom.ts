@@ -36,6 +36,7 @@ namespace RocketLink {
         }
     }
     //% block="Kjør sjekk av igniterStatus"
+    //% subcategory=Status
     //% group="Status"
     export function ignitersjekk() {
         let igniterStatus = false
@@ -85,6 +86,7 @@ namespace RocketLink {
     }
 
     //% block="Armerer LaunchPAD"
+    //% subcategory=Knapper
     //% group="Knapper - LaunchPAD"
     export function armLP(): boolean {
         if (pins.digitalReadPin(DigitalPin.P1) == 1) {
@@ -96,6 +98,7 @@ namespace RocketLink {
 
     //% block="Sjekk linkStatus til ControllerPAD: | Send radionummer $linkRadioNumber"
     //% inlineInputMode=external
+    //% subcategory=Radio
     //% group="Status - Radio"
     //% color=#e5478c
     export function linksjekk(linkRadioNumber: number) {
