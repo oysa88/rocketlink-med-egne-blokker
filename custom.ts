@@ -55,6 +55,46 @@ namespace RocketLink {
                 linkStatus = false
                 basic.showNumber(10)
             }
+        } else if (velgVariabel == status.igniterStatus) {
+            if (statusBool) {
+                igniterStatus = true
+                basic.showNumber(21)
+            } else {
+                igniterStatus = false
+                basic.showNumber(20)
+            }
+        } else if (velgVariabel == status.igniterStatusLP) {
+            if (statusBool) {
+                linkStatus = true
+                basic.showNumber(31)
+            } else {
+                linkStatus = false
+                basic.showNumber(30)
+            }
+        } else if (velgVariabel == status.armStatus) {
+            if (statusBool) {
+                linkStatus = true
+                basic.showNumber(41)
+            } else {
+                linkStatus = false
+                basic.showNumber(40)
+            }
+        } else if (velgVariabel == status.armStatusLP) {
+            if (statusBool) {
+                linkStatus = true
+                basic.showNumber(51)
+            } else {
+                linkStatus = false
+                basic.showNumber(50)
+            }
+        } else if (velgVariabel == status.klar) {
+            if (statusBool) {
+                linkStatus = true
+                basic.showNumber(61)
+            } else {
+                linkStatus = false
+                basic.showNumber(60)
+            }
         } else {
             return
         }
