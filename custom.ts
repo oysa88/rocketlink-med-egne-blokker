@@ -160,6 +160,17 @@ namespace RocketLink {
         }
     }
 
+    //% block="ControllerPAD klar til oppskytning"
+    //% subcategory=Status
+    //% group="Status"
+    export function oppskytningKlarCP(): void {
+        if (selfStatus && linkStatus && igniterStatus) {
+            klar = true
+        } else {
+            klar = false
+        }
+    }
+
     //% block="Sjekk linkStatus til ControllerPAD: | Send radionummer $linkRadioNumber"
     //% inlineInputMode=external
     //% subcategory=Radio
