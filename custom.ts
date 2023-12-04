@@ -187,4 +187,14 @@ namespace RocketLink {
             basic.pause(200)
         }
     }
+    //% block="$velgVariabel"
+    //% subcategory=Status
+    //% group="Status - Felles"
+    export function statusVariabel(velgVariabel?: status): boolean {
+        if (velgVariabel) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
