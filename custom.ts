@@ -36,8 +36,8 @@ namespace RocketLink {
     let sistSettAktiv = 0
 
     //% block="Sett $velgVariabel til $statusBool"
-    //% subcategory=Status
-    //% group="Status"
+    //% subcategory="Status"
+    //% group="Status - Felles"
     export function statusoppdatering(velgVariabel?: status, statusBool?: boolean): void {
         if (velgVariabel == status.selfStatus) {
             if (statusBool) {
@@ -101,8 +101,8 @@ namespace RocketLink {
     }
 
     //% block="Kjør sjekk av igniterStatus"
-    //% subcategory=Status
-    //% group="Status"
+    //% subcategory="Status"
+    //% group="Status - LaunchPAD"
     export function ignitersjekk() {
         pins.digitalWritePin(DigitalPin.P14, 1)
         basic.pause(200)
