@@ -160,7 +160,7 @@ namespace RocketLink {
         }
     }
 
-    //% block="ControllerPAD klar til oppskytning"
+    //% block="sjekker om ControllerPAD er klar til oppskytning"
     //% subcategory=Status
     //% group="Status"
     export function oppskytningKlarCP(): void {
