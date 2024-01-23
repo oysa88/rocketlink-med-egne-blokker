@@ -138,7 +138,7 @@ namespace RocketLink {
         }
     }
 
-    //% block="Armerer ControllerPAD"
+    //% block="Armert ControllerPAD"
     //% subcategory=Knapper color=#d400d4
     //% group="Knapper - ControllerPAD"
     export function armCP(): boolean {
@@ -149,7 +149,7 @@ namespace RocketLink {
         }
     }
 
-    //% block="Armerer LaunchPAD"
+    //% block="Armert LaunchPAD"
     //% subcategory=Knapper color=#d400d4
     //% group="Knapper - LaunchPAD"
     export function armLP(): boolean {
@@ -160,7 +160,7 @@ namespace RocketLink {
         }
     }
 
-    //% block="sjekk om ControllerPAD er klar til oppskytning"
+    //% block="Sjekk om ControllerPAD er klar til oppskytning"
     //% subcategory=Status
     //% group="Status"
     export function oppskytningKlarCP(): void {
